@@ -1,4 +1,3 @@
-
 * {
     box-sizing: border-box;
 }
@@ -6,47 +5,508 @@
 body,
 html {
     height: 100%;
-    background: antiquewhite;
+    width: 100%;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
 }
+
 
 .main-header {
-    background-color: #4dc6ff;
-    color: white;
-    height: 100px;
     position: fixed;
-    width: 100%;
+    background-color: #461220;
     top: 0;
     left: 0;
-    align-content: center;
+    z-index: 10;
+    width: 100%;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+}
 
-    div:first-of-type {
-        font-family: "Anton", sans-serif;
-        font-size: 50px;
-        font-style: normal;
-        font-weight: normal;
-        margin-left: 5%;
-        margin-right: 50%;
-    }
+.toggle-button {
+    width: 3rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    vertical-align: middle;
+    padding-top: 0.5rem;
+}
 
-    div {
-        display: inline-block;
-    }
+.toggle-button img {
+    height: 4rem;
+}
+
+.image-container {
+    border: 3px solid grey;
+    border-radius: 50%;
+    height: 4rem;
+    width: 4rem;
+}
+
+.image-container img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    height: 100%;
+    width: 50%;
+    background-color: #B23A48;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: auto;
+}
+
+.mobile-nav img {
+    height: 100%;
+    width: 100%;
+}
+
+.mobile-nav .links-images {
+    margin-bottom: 1rem;
+}
+
+.backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    z-index: 15;
+}
+
+.mobile-nav .nav-items {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+}
+
+.mobile-nav .nav-items a {
+    cursor: pointer;
+    margin: 1rem 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    right: 0;
+    opacity: 1;
+    text-decoration: none;
+    color: #333;
 }
 
 
-.main-element {
-    background: #fff035;
-    color: white;
-    height: 500px;
-    margin-top: 150px;
-    margin-left: 100px;
-    margin-right: 100px;
-    padding: 50px;
-    border-radius: 10px;
+.side-container {
+    display: none;
+    top: 0;
+    left: 0;
+    background: #461220;
+    height: 100%;
+    width: 25vh;
+    padding: 1.25rem 0 1.25rem 1.25rem;
+    min-width: 250px;
+    z-index: 1;
+    overflow-y: auto;
+    transition: left 0.3s ease-in-out;
+    color: grey;
+}
 
-    h1 {
-        font-family: "Anton", sans-serif;
-        font-size: 50px;
+.side-container img {
+    height: 100%
+}
+
+.container-items {
+    border-left: 3px solid grey;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-items .nav-items {
+    font-size: 1rem;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 1rem 0;
+}
+
+.container-items .nav-items a {
+    color: grey;
+    text-decoration: none;
+    padding: 0.5rem 2.5rem;
+    margin: 1vh 0;
+    cursor: pointer;
+}
+
+.container-items .nav-items a:hover,
+.container-items .nav-items a:active {
+    color: white;
+    border-left: 3px solid white;
+    background: grey;
+}
+
+.links-images {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.links-images a {
+    height: 2rem;
+    width: 2rem;
+}
+
+
+
+.main-content {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    top: 80px;
+}
+
+.page {
+    width: 100%;
+    margin: 0;
+    border-bottom: 2px solid #676767;
+}
+
+.page h1 {
+    color: #ff5454;
+    font-size: 2.5rem;
+}
+
+.personal-info-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #FCB9B2;
+}
+
+.personal-info {
+    background: #FED0BB;
+    width: 100%;
+}
+
+.personal-details {
+    border-bottom: 1px solid lightgrey;
+    list-style: none;
+    padding: 1.5rem;
+}
+
+.detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.5rem;
+
+}
+
+.detail label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.detail a {
+    text-align: center;
+    width: max-content;
+    text-decoration: none;
+    color: lightseagreen;
+    font-weight: bold;
+    padding: 0.2rem 0;
+    margin: auto 0
+}
+
+.detail a:hover,
+.detail a:active {
+    color: white;
+}
+
+.intro {
+    width: 90%;
+    margin: 2rem;
+}
+
+.intro p {
+    font-size: 18px;
+}
+
+.intro p.opening-paragraph {
+    line-height: 1.8;
+    font-size: 1rem;
+    margin: 1.2rem 1.2rem 1.2rem 0;
+    text-align: justify;
+    color: #333;
+}
+
+.experience-page,
+.education-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #FED0BB;
+}
+
+.content {
+    background-color: #FCB9B2;
+    width: 100%;
+}
+
+.list {
+    list-style: none;
+    padding: 1.5rem;
+}
+
+.date {
+    color: gray;
+    font-size: 1rem;
+    padding: 1rem 0;
+    border-bottom: 2px solid #676767;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+}
+
+.description {
+    padding: 1rem 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+}
+
+.description li {
+    color: grey;
+}
+
+
+.education-page {
+    background-color: #FCB9B2;
+}
+
+.education-page .content {
+    background-color: #FED0BB;
+}
+
+.skills-page,
+.hobbies-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #FED0BB;
+}
+
+.skills-content,
+.hobbies-content {
+    background: #FCB9B2;
+    width: 100%;
+}
+
+.skills-list,
+.hobbies-list {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    align-items: center;
+    list-style: none;
+    background: transparent;
+    margin: 2rem 4rem;
+}
+
+.skills-list li,
+.hobbies-list li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.skills-list img,
+.hobbies-list img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background: white;
+}
+
+
+.projects-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #FCB9B2;
+}
+
+.projects-list {
+    padding: 3rem 0;
+    background-color: #FED0BB;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    width: 100%;
+}
+
+.project {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 250px;
+    height: 350px;
+    background: #B23A48;
+    border-radius: 10%;
+    padding-bottom: 1rem;
+}
+
+.project img {
+    height: 100px;
+    width: 100px;
+    align-self: center;
+}
+
+.project:hover {
+    background: #ff5454;
+}
+
+.project h3 {
+    text-align: center;
+    color: white;
+}
+
+.project p {
+    line-height: 1.8;
+    font-size: 1rem;
+    padding: 0.5rem;
+    text-align: justify;
+    color: black;
+}
+
+.project a {
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    background: #FCB9B2;
+    padding: 1rem 0.5rem;
+    margin: 0 auto;
+    border-radius: 13%;
+}
+
+.project a:hover {
+    background: white;
+}
+
+@media (min-width: 50rem) and (min-height: 40rem) {
+    .side-container {
+        display: inline-block;
+    }
+
+    .main-header {
+        display: none;
+    }
+
+    .image-container {
+        height: 12rem;
+        width: 10rem;
+        margin: 1rem auto;
+    }
+
+
+    .main-content {
+        position: absolute;
+        display: inline-block;
+        min-width: calc(100vw - 2500px);
+        margin: 0;
+        width: 100%;
+        max-width: calc(100vw - 250px);
+        top: 0;
+    }
+
+    .main-content h1 {
+        font-size: 3rem;
+    }
+
+
+    .personal-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .personal-details {
+        width: 90%;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+
+    .detail {
+        padding: 1rem;
+        width: 20rem;
+    }
+
+    .intro {
+        margin: 2rem 0;
+    }
+
+    p.opening-paragraph {
+        margin: 1.2rem 0;
+    }
+
+    .experience,
+    .education {
+        display: flex;
+    }
+
+    .experience .date,
+    .education .date {
+        border-bottom: none;
+        border-right: 2px solid #676767;
+    }
+
+    .date span {
+        transform: rotate(180deg);
+        writing-mode: vertical-rl;
+        white-space: nowrap;
+        padding: 0 1rem;
+    }
+
+    .experience .info,
+    .education .info {
+        padding: 0 1rem;
+    }
+
+    .skills-page .skills-list,
+    .hobbies-page .hobbies-list {
+        margin: 2rem 10rem;
     }
 
 }
